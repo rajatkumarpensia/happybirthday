@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>birthday gift</title>
+  <style media="screen">
+  html, body, .container {
+    height: 100%;
+  }
+
+  body {
+    background-color: #dd5152;
+    background-image: url(heart.gif);
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  .merrywrap {
+    position: absolute;
+    right: 40px;
+    left: 40px;
+    bottom: 40px;
+    top: 40px;
+  }
+
+  .giftbox {
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    left: 50%;
+    margin-left: -100px;
+    bottom: 0;
+    z-index: 10;
+  }
+  .giftbox > div {
+    background: #34495e;
+    position: absolute;
+  }
+  .giftbox > div:after, .giftbox > div:before {
+    position: absolute;
+    content: "";
+    top: 0;
+  }
+  .giftbox:after {
+    position: absolute;
+    color: #fff;
+    width: 100%;
+    content: "Click Me!";
+    left: 0;
+    bottom: 0;
+    font-size: 24px;
+    text-align: center;
+    transform: rotate(-20deg);
+    transform-origin: 0 0;
+  }
+  .giftbox .cover {
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 25%;
+    z-index: 2;
+  }
+  .giftbox .cover:before {
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    width: 50px;
+    transform: translateX(-50%);
+    background: #fdc56d;
+  }
+  .giftbox .cover > div {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    top: -50px;
+    transform: translateX(-50%);
+  }
+  .giftbox .cover > div:before, .giftbox .cover > div:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    box-shadow: inset 0 0 0 15px #fdc56d;
+    border-radius: 30px;
+    transform-origin: 50% 100%;
+  }
+  .giftbox .cover > div:before {
+    transform: translateX(-45%) skewY(40deg);
+  }
+  .giftbox .cover > div:after {
+    transform: translateX(45%) skewY(-40deg);
+  }
+  .giftbox .box {
+    right: 5%;
+    left: 5%;
+    height: 80%;
+    bottom: 0;
+  }
+  .giftbox .box:before {
+    width: 50px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fdc56d;
+  }
+  .giftbox .box:after {
+    width: 100%;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  /* .icons {
+    display: none;
+  } */
+  .icons .row {
+    width: 100%;
+    text-align: center;
+  }
+  .icons .row span {
+    color: #fff;
+    text-shadow: 5px 5px 0 #ca3121;
+    font-size: 84px;
+    display: inline-block;
+    opacity: 0;
+    transition: transform 0.5s ease-in, opacity 0.7s;
+  }
+
+  .step-1 .giftbox {
+    animation: wobble 0.5s linear infinite forwards;
+  }
+  .step-1 .cover {
+    animation: wobble 0.5s linear infinite  0.1s forwards;
+  }
+  .step-1 .icons .row span {
+    opacity: 1;
+  }
+
+  .step-2 .giftbox:after {
+    opacity: 0;
+  }
+
+  .step-3 .giftbox,
+  .step-4 .giftbox {
+    opacity: 0;
+    z-index: 1;
+  }
+  .step-3 .giftbox:after,
+  .step-4 .giftbox:after {
+    opacity: 0;
+  }
+
+  .step-2 .giftbox .cover {
+    animation: flyUp 0.4s ease-in forwards;
+  }
+  .step-2 .giftbox .box {
+    animation: flyDown 0.2s ease-in 0.05s forwards;
+  }
+
+  @keyframes wobble {
+    25% {
+      transform: rotate(4deg);
+    }
+    75% {
+      transform: rotate(-2deg);
+    }
+  }
+  @keyframes flyUp {
+    75% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-1000px) rotate(20deg);
+      opacity: 0;
+    }
+  }
+  @keyframes flyDown {
+    75% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+  .step-1 .icons .row span {
+    opacity: 0;
+  }
+
+  .step-1 .icons .row span:first-child {
+    transform: translateY(700%) translateX(600%);
+  }
+
+  .step-1 .icons .row span:nth-child(2) {
+    transform: translateY(700%) translateX(500%);
+  }
+
+  .step-1 .icons .row span:nth-child(3) {
+    transform: translateY(700%) translateX(400%);
+  }
+
+  .step-1 .icons .row span:nth-child(4) {
+    transform: translateY(700%) translateX(300%);
+  }
+
+  .step-1 .icons .row span:nth-child(5) {
+    transform: translateY(700%) translateX(200%);
+  }
+
+  .step-1 .icons .row span:nth-child(6) {
+    transform: translateY(700%) translateX(100%);
+  }
+
+  .step-1 .icons .row span:nth-child(7) {
+    transform: translateY(700%) translateX(0);
+  }
+
+  .step-1 .icons .row span:nth-child(8) {
+    transform: translateY(700%) translateX(-100%);
+  }
+
+  .step-1 .icons .row span:nth-child(9) {
+    transform: translateY(700%) translateX(-200%);
+  }
+
+  .step-1 .icons .row span:nth-child(10) {
+    transform: translateY(700%) translateX(-300%);
+  }
+
+  .step-1 .icons .row span:nth-child(11) {
+    transform: translateY(700%) translateX(-400%);
+  }
+
+  .step-1 .icons .row span:nth-child(12) {
+    transform: translateY(700%) translateX(-500%);
+  }
+
+  .step-1 .icons .row span:nth-child(13) {
+    transform: translateY(700%) translateX(-600%);
+  }
+
+  .step-2 .icons .row span:nth-child(2) {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+  }
+
+  .step-2 .icons .row span:nth-child(3) {
+    -webkit-transition-delay: 0.15s;
+    transition-delay: 0.15s;
+  }
+
+  .step-2 .icons .row span:nth-child(4) {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+  }
+
+  .step-2 .icons .row span:nth-child(5) {
+    -webkit-transition-delay: 0.25s;
+    transition-delay: 0.25s;
+  }
+
+  .step-2 .icons .row span:nth-child(6) {
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+  }
+
+  .step-2 .icons .row span:nth-child(7) {
+    -webkit-transition-delay: 0.35s;
+    transition-delay: 0.35s;
+  }
+
+  .step-2 .icons .row span:nth-child(8) {
+    -webkit-transition-delay: 0.4s;
+    transition-delay: 0.4s;
+  }
+
+  .step-2 .icons .row span:nth-child(9) {
+    -webkit-transition-delay: 0.45s;
+    transition-delay: 0.45s;
+  }
+
+  .step-2 .icons .row span:nth-child(10) {
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+  }
+
+  .step-2 .icons .row span:nth-child(11) {
+    -webkit-transition-delay: 0.55s;
+    transition-delay: 0.55s;
+  }
+
+  .step-2 .icons .row span:nth-child(12) {
+    -webkit-transition-delay: 0.6s;
+    transition-delay: 0.6s;
+  }
+
+  .step-2 .icons .row span:nth-child(13) {
+    -webkit-transition-delay: 0.65s;
+    transition-delay: 0.65s;
+  }
+
+  .step-2 .icons span, .step-3 .icons span, .step-4 .icons span {
+    opacity: 0.7;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 0.91);
+  }
+
+  .step-4 .icons .row span, .step-3 .icons .row span {
+    animation: wobble 0.6s linear infinite forwards;
+  }
+
+  .step-4 .icons .row span:nth-child(even), .step-3 .icons .row span:nth-child(even) {
+    animation-duration: 0.7s;
+  }
+
+
+
+
+
+
+
+  @import url("https://fonts.googleapis.com/css?family=Concert+One|Pacifico");
+
+
+  .birthday-cake-html {
+     position: fixed;top:100%;left:0;height:100%;width:100%;
+      background-image:url(h.png);
+      background-color: #fff;
+      background-size: cover;
+      background-position: center;
+      font-family: "Pacifico",cursive;
+      transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      opacity: 0;
+      z-index: 999;
+    }
+
+  .birthday-cake-html  h1 {
+      position: fixed;
+      text-align: center;
+      width: 100%;
+      top: 120px;
+      font-size: 90px;
+      background: -webkit-linear-gradient(0deg, #ceadfc 0%, #a3bbfb 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: 'Concert One', cursive;
+      font-weight: 400;
+      z-index: -1;
+      letter-spacing: 6px;
+      display: none;
+    }
+
+  .birthday-cake-html  span {
+      position: fixed;
+      text-align: center;
+      width: 100%;
+      top: 100px;
+      font-size: 32px;
+      transform: skewX(50deg);
+      -webkit-transform: skewX(50deg);
+      -moz-transform: skewX(50deg);
+      -ms-transform: skewX(50deg);
+      -o-transform: skewX(50deg);
+      color: #fff;
+      z-index: 15;
+    }
+
+  .birthday-cake-html  h2 {
+      position: fixed;
+      text-align: center;
+      width: 100%;
+      top:270px;
+      font-size: 30px;
+      padding:8px 10px;
+      background-color: rgba(221, 81, 82,0.5);
+      color:#fff;
+    }
+
+  .birthday-cake-html  bokeh {
+      position: fixed;
+      width: 2vmin;
+      height: 2vmin;
+      border-radius: 50%;
+      animation-name: explosion;
+      animation-iteration-count: infinite;
+      animation-direction: reverse;
+      animation-timing-function: cubic-bezier(0.84, 0.02, 1, 1);
+    }
+  .birthday-cake-html  bokeh:nth-child(1) {
+      background-color: #fc85e1;
+      transform: translate(48.0210670428vw, 74.9445398737vh);
+      animation-duration: 4.1897613803s;
+      animation-delay: -3.5498398381s;
+    }
+  .birthday-cake-html  bokeh:nth-child(2) {
+      background-color: #2bd8ff;
+      transform: translate(63.6886684565vw, 37.1916920577vh);
+      animation-duration: 4.728607579s;
+      animation-delay: -0.5789710467s;
+    }
+  .birthday-cake-html  bokeh:nth-child(3) {
+      background-color: #ef8d22;
+      transform: translate(84.4814595539vw, 4.8247497595vh);
+      animation-duration: 2.077529003s;
+      animation-delay: -2.3651135978s;
+    }
+  .birthday-cake-html  bokeh:nth-child(4) {
+      background-color: #fc85e1;
+      transform: translate(39.5069980406vw, 16.7287305247vh);
+      animation-duration: 2.3840411523s;
+      animation-delay: -4.7476396975s;
+    }
+  .birthday-cake-html  bokeh:nth-child(5) {
+      background-color: #fc85e1;
+      transform: translate(95.1684954857vw, 68.245904111vh);
+      animation-duration: 3.21040968s;
+      animation-delay: -0.8746377891s;
+    }
+  .birthday-cake-html  bokeh:nth-child(6) {
+      background-color: #2bd8ff;
+      transform: translate(99.4031578821vw, 42.7657619848vh);
+      animation-duration: 4.3555337535s;
+      animation-delay: -0.3351727329s;
+    }
+  .birthday-cake-html  bokeh:nth-child(7) {
+      background-color: #feff28;
+      transform: translate(97.3658662264vw, 63.9024738324vh);
+      animation-duration: 3.9987485344s;
+      animation-delay: -0.6210239084s;
+    }
+  .birthday-cake-html  bokeh:nth-child(8) {
+      background-color: #fc85e1;
+      transform: translate(16.0748071775vw, 47.1558764362vh);
+      animation-duration: 3.4470071409s;
+      animation-delay: -4.6728816583s;
+    }
+  .birthday-cake-html  bokeh:nth-child(9) {
+      background-color: #2bd8ff;
+      transform: translate(89.8266014555vw, 61.3819152004vh);
+      animation-duration: 2.9395881388s;
+      animation-delay: -2.9220127884s;
+    }
+  .birthday-cake-html  bokeh:nth-child(10) {
+      background-color: #2bd8ff;
+      transform: translate(55.1131741501vw, 16.0397454904vh);
+      animation-duration: 3.7650539505s;
+      animation-delay: -1.3415046742s;
+    }
+  .birthday-cake-html  bokeh:nth-child(11) {
+      background-color: #ef8d22;
+      transform: translate(51.8650642481vw, 47.7374877864vh);
+      animation-duration: 3.1920895043s;
+      animation-delay: -0.8554255932s;
+    }
+  .birthday-cake-html  bokeh:nth-child(12) {
+      background-color: #feff28;
+      transform: translate(34.0984934506vw, 8.1052194803vh);
+      animation-duration: 4.6914743768s;
+      animation-delay: -3.8876475723s;
+    }
+  .birthday-cake-html  bokeh:nth-child(13) {
+      background-color: #2bd8ff;
+      transform: translate(13.7217170497vw, 30.9847186844vh);
+      animation-duration: 2.3073966461s;
+      animation-delay: -1.7676177275s;
+    }
+  .birthday-cake-html  bokeh:nth-child(14) {
+      background-color: #fc85e1;
+      transform: translate(80.0314565431vw, 70.1423807557vh);
+      animation-duration: 3.1141741432s;
+      animation-delay: -4.7851818295s;
+    }
+  .birthday-cake-html  bokeh:nth-child(15) {
+      background-color: #feff28;
+      transform: translate(87.6074765078vw, 70.6088386788vh);
+      animation-duration: 4.9140825044s;
+      animation-delay: -0.8729728298s;
+    }
+  .birthday-cake-html  bokeh:nth-child(16) {
+      background-color: #2bd8ff;
+      transform: translate(7.1710162699vw, 53.9307858022vh);
+      animation-duration: 4.6661289633s;
+      animation-delay: -0.9137695108s;
+    }
+  .birthday-cake-html  bokeh:nth-child(17) {
+      background-color: #fc85e1;
+      transform: translate(12.5725423204vw, 29.5581968847vh);
+      animation-duration: 4.5807885788s;
+      animation-delay: -3.3863634733s;
+    }
+  .birthday-cake-html  bokeh:nth-child(18) {
+      background-color: #feff28;
+      transform: translate(62.6347675917vw, 25.2616226117vh);
+      animation-duration: 3.3928217749s;
+      animation-delay: -2.1682912125s;
+    }
+  .birthday-cake-html  bokeh:nth-child(19) {
+      background-color: #ef8d22;
+      transform: translate(11.9151397864vw, 48.3085406663vh);
+      animation-duration: 2.277062388s;
+      animation-delay: -0.4209782782s;
+    }
+  .birthday-cake-html  bokeh:nth-child(20) {
+      background-color: #fc85e1;
+      transform: translate(29.9152098925vw, 37.9872682919vh);
+      animation-duration: 4.5096389835s;
+      animation-delay: -4.3920422341s;
+    }
+  .birthday-cake-html  bokeh:nth-child(21) {
+      background-color: #ef8d22;
+      transform: translate(17.6974515675vw, 22.0560241977vh);
+      animation-duration: 2.2711043996s;
+      animation-delay: -3.2497491034s;
+    }
+  .birthday-cake-html  bokeh:nth-child(22) {
+      background-color: #ef8d22;
+      transform: translate(98.080217957vw, 18.5097045633vh);
+      animation-duration: 2.2548965133s;
+      animation-delay: -0.1654672085s;
+    }
+  .birthday-cake-html  bokeh:nth-child(23) {
+      background-color: #feff28;
+      transform: translate(39.3694273823vw, 27.0475644306vh);
+      animation-duration: 3.0056151041s;
+      animation-delay: -0.9889853685s;
+    }
+  .birthday-cake-html  bokeh:nth-child(24) {
+      background-color: #ef8d22;
+      transform: translate(52.9950858335vw, 12.4157099952vh);
+      animation-duration: 4.3829337707s;
+      animation-delay: -3.4806760287s;
+    }
+  .birthday-cake-html  bokeh:nth-child(25) {
+      background-color: #fc85e1;
+      transform: translate(57.8543187324vw, 17.7868342731vh);
+      animation-duration: 4.2197189498s;
+      animation-delay: -2.0891725785s;
+    }
+  .birthday-cake-html  bokeh:nth-child(26) {
+      background-color: #feff28;
+      transform: translate(17.3563142026vw, 24.6659253004vh);
+      animation-duration: 3.6829236523s;
+      animation-delay: -1.5122859649s;
+    }
+  .birthday-cake-html  bokeh:nth-child(27) {
+      background-color: #fc85e1;
+      transform: translate(82.6810132141vw, 78.2158181843vh);
+      animation-duration: 4.5191209351s;
+      animation-delay: -4.5942011568s;
+    }
+  .birthday-cake-html  bokeh:nth-child(28) {
+      background-color: #fc85e1;
+      transform: translate(17.6184266467vw, 32.5739306472vh);
+      animation-duration: 3.7606836194s;
+      animation-delay: -0.9443554671s;
+    }
+  .birthday-cake-html  bokeh:nth-child(29) {
+      background-color: #feff28;
+      transform: translate(61.948957511vw, 18.4994920253vh);
+      animation-duration: 3.7811359616s;
+      animation-delay: -1.3017972369s;
+    }
+  .birthday-cake-html  bokeh:nth-child(30) {
+      background-color: #feff28;
+      transform: translate(84.4476752656vw, 59.3511594069vh);
+      animation-duration: 2.3157923976s;
+      animation-delay: -1.8706751247s;
+    }
+  .birthday-cake-html  bokeh:nth-child(31) {
+      background-color: #2bd8ff;
+      transform: translate(69.2983502199vw, 45.4491495001vh);
+      animation-duration: 3.435431812s;
+      animation-delay: -1.0752148989s;
+    }
+  .birthday-cake-html  bokeh:nth-child(32) {
+      background-color: #fc85e1;
+      transform: translate(57.5630308862vw, 38.6709013146vh);
+      animation-duration: 2.5394178651s;
+      animation-delay: -1.5490041818s;
+    }
+  .birthday-cake-html  bokeh:nth-child(33) {
+      background-color: #feff28;
+      transform: translate(56.2602126408vw, 66.4840818398vh);
+      animation-duration: 3.785567804s;
+      animation-delay: -3.4942824466s;
+    }
+  .birthday-cake-html  bokeh:nth-child(34) {
+      background-color: #ef8d22;
+      transform: translate(27.6236166116vw, 0.2955913268vh);
+      animation-duration: 3.2645388631s;
+      animation-delay: -0.0189857614s;
+    }
+  .birthday-cake-html  bokeh:nth-child(35) {
+      background-color: #fc85e1;
+      transform: translate(38.7270763665vw, 60.1333505484vh);
+      animation-duration: 3.2836703831s;
+      animation-delay: -2.3553341782s;
+    }
+  .birthday-cake-html  bokeh:nth-child(36) {
+      background-color: #ef8d22;
+      transform: translate(92.5242462295vw, 91.3727363068vh);
+      animation-duration: 2.2352868541s;
+      animation-delay: -3.2928734515s;
+    }
+  .birthday-cake-html  bokeh:nth-child(37) {
+      background-color: #2bd8ff;
+      transform: translate(29.3855471653vw, 92.2656602801vh);
+      animation-duration: 3.3401306913s;
+      animation-delay: -4.174430705s;
+    }
+  .birthday-cake-html  bokeh:nth-child(38) {
+      background-color: #fc85e1;
+      transform: translate(58.0376010143vw, 35.222921987vh);
+      animation-duration: 4.8411941594s;
+      animation-delay: -0.4665346837s;
+    }
+  .birthday-cake-html  bokeh:nth-child(39) {
+      background-color: #feff28;
+      transform: translate(99.8253795795vw, 19.7178290877vh);
+      animation-duration: 3.0375769286s;
+      animation-delay: -0.9993131893s;
+    }
+  .birthday-cake-html  bokeh:nth-child(40) {
+      background-color: #ef8d22;
+      transform: translate(99.4811785525vw, 53.4875185474vh);
+      animation-duration: 4.1755923361s;
+      animation-delay: -3.906857776s;
+    }
+  .birthday-cake-html  bokeh:nth-child(41) {
+      background-color: #2bd8ff;
+      transform: translate(94.4421438777vw, 44.530596398vh);
+      animation-duration: 4.5996122314s;
+      animation-delay: -2.1780585852s;
+    }
+  .birthday-cake-html  bokeh:nth-child(42) {
+      background-color: #ef8d22;
+      transform: translate(47.0553704594vw, 18.1367585164vh);
+      animation-duration: 3.1952671215s;
+      animation-delay: -4.9590619266s;
+    }
+  .birthday-cake-html  bokeh:nth-child(43) {
+      background-color: #fc85e1;
+      transform: translate(69.5927007792vw, 14.4166154906vh);
+      animation-duration: 2.8828103814s;
+      animation-delay: -2.2483332982s;
+    }
+  .birthday-cake-html  bokeh:nth-child(44) {
+      background-color: #feff28;
+      transform: translate(75.9141891599vw, 91.4724090199vh);
+      animation-duration: 2.9970417309s;
+      animation-delay: -2.4817338491s;
+    }
+  .birthday-cake-html  bokeh:nth-child(45) {
+      background-color: #2bd8ff;
+      transform: translate(0.6698275802vw, 3.056610012vh);
+      animation-duration: 4.1340117252s;
+      animation-delay: -0.1292911191s;
+    }
+  .birthday-cake-html  bokeh:nth-child(46) {
+      background-color: #feff28;
+      transform: translate(53.7391234272vw, 33.0230182088vh);
+      animation-duration: 3.7718495612s;
+      animation-delay: -1.6245334131s;
+    }
+  .birthday-cake-html  bokeh:nth-child(47) {
+      background-color: #2bd8ff;
+      transform: translate(82.3479401648vw, 6.4153697649vh);
+      animation-duration: 3.9611941348s;
+      animation-delay: -2.850761687s;
+    }
+  .birthday-cake-html  bokeh:nth-child(48) {
+      background-color: #fc85e1;
+      transform: translate(23.8546897346vw, 24.0342610009vh);
+      animation-duration: 3.9623843945s;
+      animation-delay: -1.7559998754s;
+    }
+  .birthday-cake-html  bokeh:nth-child(49) {
+      background-color: #fc85e1;
+      transform: translate(93.0373888932vw, 51.3571452614vh);
+      animation-duration: 4.054862909s;
+      animation-delay: -2.3743242246s;
+    }
+  .birthday-cake-html  bokeh:nth-child(50) {
+      background-color: #2bd8ff;
+      transform: translate(30.6790920217vw, 59.418882127vh);
+      animation-duration: 2.9332207253s;
+      animation-delay: -2.8881754309s;
+    }
+  .birthday-cake-html  bokeh:nth-child(51) {
+      background-color: #fc85e1;
+      transform: translate(32.905622693vw, 89.007701522vh);
+      animation-duration: 3.5725903953s;
+      animation-delay: -4.3799672775s;
+    }
+  .birthday-cake-html  bokeh:nth-child(52) {
+      background-color: #ef8d22;
+      transform: translate(79.344317303vw, 98.5564842565vh);
+      animation-duration: 3.8319213811s;
+      animation-delay: -1.1969527962s;
+    }
+  .birthday-cake-html  bokeh:nth-child(53) {
+      background-color: #ef8d22;
+      transform: translate(82.6191757519vw, 17.4931297587vh);
+      animation-duration: 2.2338007732s;
+      animation-delay: -2.8283113089s;
+    }
+  .birthday-cake-html  bokeh:nth-child(54) {
+      background-color: #2bd8ff;
+      transform: translate(28.0944451058vw, 39.1928340419vh);
+      animation-duration: 3.2953380038s;
+      animation-delay: -0.5271061165s;
+    }
+  .birthday-cake-html  bokeh:nth-child(55) {
+      background-color: #ef8d22;
+      transform: translate(84.6891943293vw, 82.4684684432vh);
+      animation-duration: 4.9211419827s;
+      animation-delay: -4.5499866862s;
+    }
+  .birthday-cake-html  bokeh:nth-child(56) {
+      background-color: #fc85e1;
+      transform: translate(24.1789144548vw, 66.3867907037vh);
+      animation-duration: 2.5475641073s;
+      animation-delay: -3.3630029411s;
+    }
+  .birthday-cake-html  bokeh:nth-child(57) {
+      background-color: #feff28;
+      transform: translate(94.0711232165vw, 5.0225691531vh);
+      animation-duration: 2.5982228218s;
+      animation-delay: -4.5603916433s;
+    }
+  .birthday-cake-html  bokeh:nth-child(58) {
+      background-color: #feff28;
+      transform: translate(83.9818240732vw, 80.8001293436vh);
+      animation-duration: 4.1672345051s;
+      animation-delay: -2.9199133801s;
+    }
+  .birthday-cake-html  bokeh:nth-child(59) {
+      background-color: #feff28;
+      transform: translate(59.6595819276vw, 71.2406344595vh);
+      animation-duration: 2.3226939885s;
+      animation-delay: -2.2193674383s;
+    }
+  .birthday-cake-html  bokeh:nth-child(60) {
+      background-color: #ef8d22;
+      transform: translate(49.9871602549vw, 64.553054796vh);
+      animation-duration: 3.5245513151s;
+      animation-delay: -4.9823502299s;
+    }
+  .birthday-cake-html  bokeh:nth-child(61) {
+      background-color: #ef8d22;
+      transform: translate(94.6494424512vw, 98.9738846459vh);
+      animation-duration: 2.2699395413s;
+      animation-delay: -0.77964536s;
+    }
+  .birthday-cake-html  bokeh:nth-child(62) {
+      background-color: #ef8d22;
+      transform: translate(29.4480220806vw, 70.599043274vh);
+      animation-duration: 4.7443807249s;
+      animation-delay: -1.0433505845s;
+    }
+  .birthday-cake-html  bokeh:nth-child(63) {
+      background-color: #ef8d22;
+      transform: translate(98.038922546vw, 90.4169041418vh);
+      animation-duration: 3.8951970651s;
+      animation-delay: -2.4377797355s;
+    }
+  .birthday-cake-html  bokeh:nth-child(64) {
+      background-color: #2bd8ff;
+      transform: translate(69.5559171644vw, 39.6264409697vh);
+      animation-duration: 3.9771557911s;
+      animation-delay: -0.1634650597s;
+    }
+  .birthday-cake-html  bokeh:nth-child(65) {
+      background-color: #2bd8ff;
+      transform: translate(21.1177717396vw, 50.4323691291vh);
+      animation-duration: 3.0202562717s;
+      animation-delay: -4.6495015184s;
+    }
+  .birthday-cake-html  bokeh:nth-child(66) {
+      background-color: #ef8d22;
+      transform: translate(4.7242509543vw, 27.5843629325vh);
+      animation-duration: 3.7097506605s;
+      animation-delay: -3.5661632466s;
+    }
+  .birthday-cake-html  bokeh:nth-child(67) {
+      background-color: #fc85e1;
+      transform: translate(82.4993467287vw, 18.8382434501vh);
+      animation-duration: 3.4240142584s;
+      animation-delay: -2.8763114017s;
+    }
+  .birthday-cake-html  bokeh:nth-child(68) {
+      background-color: #feff28;
+      transform: translate(6.1013615897vw, 23.5452395444vh);
+      animation-duration: 3.5041874164s;
+      animation-delay: -2.9127924608s;
+    }
+  .birthday-cake-html  bokeh:nth-child(69) {
+      background-color: #ef8d22;
+      transform: translate(27.0450624346vw, 23.5124412896vh);
+      animation-duration: 4.0867963922s;
+      animation-delay: -3.5212657893s;
+    }
+  .birthday-cake-html  bokeh:nth-child(70) {
+      background-color: #2bd8ff;
+      transform: translate(70.480420198vw, 30.5463314241vh);
+      animation-duration: 4.3200523304s;
+      animation-delay: -3.1112657832s;
+    }
+  .birthday-cake-html  bokeh:nth-child(71) {
+      background-color: #fc85e1;
+      transform: translate(59.6024718496vw, 21.7196437188vh);
+      animation-duration: 4.9717497127s;
+      animation-delay: -3.4493833107s;
+    }
+  .birthday-cake-html  bokeh:nth-child(72) {
+      background-color: #2bd8ff;
+      transform: translate(20.9629141878vw, 73.134779973vh);
+      animation-duration: 3.6487761616s;
+      animation-delay: -0.4571124478s;
+    }
+  .birthday-cake-html  bokeh:nth-child(73) {
+      background-color: #2bd8ff;
+      transform: translate(54.3336068379vw, 42.9868726177vh);
+      animation-duration: 2.5605772355s;
+      animation-delay: -3.4524028841s;
+    }
+  .birthday-cake-html  bokeh:nth-child(74) {
+      background-color: #fc85e1;
+      transform: translate(54.0459051456vw, 13.828559808vh);
+      animation-duration: 4.3929573352s;
+      animation-delay: -2.3853179857s;
+    }
+  .birthday-cake-html  bokeh:nth-child(75) {
+      background-color: #2bd8ff;
+      transform: translate(17.5071573638vw, 34.1406509407vh);
+      animation-duration: 4.0290666288s;
+      animation-delay: -0.8226214753s;
+    }
+  .birthday-cake-html  bokeh:nth-child(76) {
+      background-color: #fc85e1;
+      transform: translate(75.110515595vw, 94.0539884451vh);
+      animation-duration: 4.003543618s;
+      animation-delay: -3.3075998627s;
+    }
+  .birthday-cake-html  bokeh:nth-child(77) {
+      background-color: #feff28;
+      transform: translate(6.3394825068vw, 62.2915302178vh);
+      animation-duration: 3.4045967502s;
+      animation-delay: -4.9666845329s;
+    }
+  .birthday-cake-html  bokeh:nth-child(78) {
+      background-color: #2bd8ff;
+      transform: translate(14.9294604154vw, 91.3533378595vh);
+      animation-duration: 4.0298316019s;
+      animation-delay: -0.1388713817s;
+    }
+  .birthday-cake-html  bokeh:nth-child(79) {
+      background-color: #ef8d22;
+      transform: translate(30.4440063783vw, 58.6150868395vh);
+      animation-duration: 2.3251797589s;
+      animation-delay: -3.6741932106s;
+    }
+  .birthday-cake-html  bokeh:nth-child(80) {
+      background-color: #fc85e1;
+      transform: translate(31.9410805103vw, 79.0781018878vh);
+      animation-duration: 2.4775813163s;
+      animation-delay: -2.2325033425s;
+    }
+  .birthday-cake-html  bokeh:nth-child(81) {
+      background-color: #fc85e1;
+      transform: translate(28.3452853457vw, 1.7633383696vh);
+      animation-duration: 3.9089906889s;
+      animation-delay: -2.8808158284s;
+    }
+  .birthday-cake-html  bokeh:nth-child(82) {
+      background-color: #ef8d22;
+      transform: translate(69.9112563489vw, 90.1541718732vh);
+      animation-duration: 2.5340124092s;
+      animation-delay: -4.4540094118s;
+    }
+  .birthday-cake-html  bokeh:nth-child(83) {
+      background-color: #2bd8ff;
+      transform: translate(1.0634220667vw, 25.7321980428vh);
+      animation-duration: 4.5729785379s;
+      animation-delay: -3.3603618629s;
+    }
+  .birthday-cake-html  bokeh:nth-child(84) {
+      background-color: #fc85e1;
+      transform: translate(76.8018905534vw, 17.5062579079vh);
+      animation-duration: 4.1670641356s;
+      animation-delay: -2.2140608998s;
+    }
+  .birthday-cake-html  bokeh:nth-child(85) {
+      background-color: #feff28;
+      transform: translate(54.0554535957vw, 32.9825186947vh);
+      animation-duration: 4.6792056806s;
+      animation-delay: -3.716280838s;
+    }
+  .birthday-cake-html  bokeh:nth-child(86) {
+      background-color: #feff28;
+      transform: translate(44.5429507949vw, 9.4732121492vh);
+      animation-duration: 2.0849866973s;
+      animation-delay: -4.7845638172s;
+    }
+  .birthday-cake-html  bokeh:nth-child(87) {
+      background-color: #ef8d22;
+      transform: translate(98.0660180175vw, 44.8420968143vh);
+      animation-duration: 3.1593562288s;
+      animation-delay: -1.4305805556s;
+    }
+  .birthday-cake-html  bokeh:nth-child(88) {
+      background-color: #ef8d22;
+      transform: translate(67.8516528656vw, 62.7372166428vh);
+      animation-duration: 4.7935459273s;
+      animation-delay: -0.3491306543s;
+    }
+  .birthday-cake-html  bokeh:nth-child(89) {
+      background-color: #2bd8ff;
+      transform: translate(50.0008109425vw, 30.7560402109vh);
+      animation-duration: 3.5047571472s;
+      animation-delay: -0.2177664076s;
+    }
+  .birthday-cake-html  bokeh:nth-child(90) {
+      background-color: #ef8d22;
+      transform: translate(80.6615474143vw, 53.0009579978vh);
+      animation-duration: 4.4245466898s;
+      animation-delay: -0.2152334904s;
+    }
+  .birthday-cake-html  bokeh:nth-child(91) {
+      background-color: #fc85e1;
+      transform: translate(34.4685594329vw, 62.2518926798vh);
+      animation-duration: 3.5137453328s;
+      animation-delay: -0.2450191451s;
+    }
+  .birthday-cake-html  bokeh:nth-child(92) {
+      background-color: #feff28;
+      transform: translate(74.2132117773vw, 4.1293946978vh);
+      animation-duration: 2.9073070208s;
+      animation-delay: -1.0686727288s;
+    }
+  .birthday-cake-html  bokeh:nth-child(93) {
+      background-color: #ef8d22;
+      transform: translate(96.5835365655vw, 18.9051235265vh);
+      animation-duration: 2.8143218113s;
+      animation-delay: -2.0228314464s;
+    }
+  .birthday-cake-html  bokeh:nth-child(94) {
+      background-color: #fc85e1;
+      transform: translate(89.8411263689vw, 32.6293138952vh);
+      animation-duration: 4.2084080523s;
+      animation-delay: -4.4275677175s;
+    }
+  .birthday-cake-html  bokeh:nth-child(95) {
+      background-color: #feff28;
+      transform: translate(50.8559527433vw, 98.4792106203vh);
+      animation-duration: 4.4153057066s;
+      animation-delay: -1.778133421s;
+    }
+  .birthday-cake-html  bokeh:nth-child(96) {
+      background-color: #fc85e1;
+      transform: translate(71.3815107894vw, 40.4098717426vh);
+      animation-duration: 3.0968882878s;
+      animation-delay: -3.5711737208s;
+    }
+  .birthday-cake-html  bokeh:nth-child(97) {
+      background-color: #2bd8ff;
+      transform: translate(41.8639638647vw, 97.0547044892vh);
+      animation-duration: 4.3155132613s;
+      animation-delay: -1.5495262526s;
+    }
+  .birthday-cake-html  bokeh:nth-child(98) {
+      background-color: #ef8d22;
+      transform: translate(95.8087508631vw, 16.8301345699vh);
+      animation-duration: 3.1563154622s;
+      animation-delay: -1.9404496012s;
+    }
+  .birthday-cake-html  bokeh:nth-child(99) {
+      background-color: #ef8d22;
+      transform: translate(68.6390455038vw, 84.3516994357vh);
+      animation-duration: 4.3371838465s;
+      animation-delay: -0.4694180406s;
+    }
+  .birthday-cake-html  bokeh:nth-child(100) {
+      background-color: #fc85e1;
+      transform: translate(87.3997151638vw, 14.5950246131vh);
+      animation-duration: 2.2688340497s;
+      animation-delay: -3.5267157175s;
+    }
+
+    @keyframes explosion {
+      0% {
+        opacity: 0;
+      }
+      70% {
+        opacity: 1;
+      }
+      100% {
+        transform: translate(50vw, 100vh);
+      }
+    }
+  .birthday-cake-html  .cake {
+      position: relative;
+      top: 40px;
+      margin: auto;
+      width: 200px;
+      height: 60px;
+      background: #dd518c;
+      border-radius: 100%;
+      transform: translateZ(100px);
+      box-shadow: 0px 4px 0px #f4f9fd,  0px 8px 0px #dba9ff,  0px 12px 0px #fec3b3,  0px 16px 0px #f7f6fb,  0px 20px 0px #f7f6fb,  0px 24px 0px #f7f6fb, 0px 28px 0px #f7f6fb, 0px 32px 0px #fea0bb, 0px 36px 0px #fea0bb, 0px 40px 0px #9cef9d, 0px 44px 0px #9cef9d,  0px 48px 0px #f7f6fb,  0px 52px 0px #f7f6fb,  0px 56px 0px #f7f6fb,  0px 60px 0px #f7f6fb,  0px 64px 0px #f7f6fb,  0px 68px 0px #dfa5fc,  0px 72px 0px #dfa5fc,  0px 76px 0px #fafffe,  0px 80px 0px #fafffe;
+      z-index: 9;
+    }
+
+  .birthday-cake-html  .plate {
+      position: absolute;
+      height: 90px;
+      width: 300px;
+      bottom: -95px;
+      left: 50%;
+      top: 160px;
+      margin-left: -150px;
+      border-radius: 100%;
+      background: radial-gradient(ellipse closest-side at center, #08c7fe 0%, #04d7f2 71%, #02ffd0 100%);
+      box-shadow: 0px 3px 0px #00e2e1, 0px 6px 0px #00d3fb;
+      transform: translateZ(80px);
+    }
+
+  .birthday-cake-html  .candle {
+      position: relative;
+      height: 50px;
+      width: 12px;
+      top: 60px;
+      margin: auto;
+      background: linear-gradient(0deg, #b7f4a7 0%, white 100%);
+      border-radius: 4px;
+      transform: translateZ(120px);
+      z-index: 99;
+    }
+
+  .birthday-cake-html  #flame {
+      position: absolute;
+      z-index: 10;
+    }
+
+  .birthday-cake-html  .lit {
+      background: linear-gradient(to bottom, #FFF6D9, #FBC36C);
+      width: 15px;
+      height: 35px;
+      /*  Info on border radius. http://www.css3.info/preview/rounded-border/ */
+      border-top-left-radius: 10px 35px;
+      border-top-right-radius: 10px 35px;
+      border-bottom-right-radius: 10px 10px;
+      border-bottom-left-radius: 10px 10px;
+      top: -34px;
+      margin: auto;
+      /*   http://www.css3.info/preview/box-shadow/ */
+      box-shadow: 0 0 17px 7px rgba(251, 246, 190, 0.71);
+      transform-origin: bottom;
+      animation: flicker 1s ease-in-out alternate infinite;
+    }
+
+    @keyframes flicker {
+      0% {
+        transform: skewX(5deg);
+        box-shadow: 0 0 17px 10px rgba(251, 246, 190, 0.71);
+      }
+      25% {
+        transform: skewX(-5deg);
+        box-shadow: 0 0 17px 5px rgba(251, 246, 190, 0.71);
+      }
+      50% {
+        transform: skewX(10deg);
+        box-shadow: 0 0 17px 7px rgba(251, 246, 190, 0.71);
+      }
+      75% {
+        transform: skewX(-10deg);
+        box-shadow: 0 0 17px 5px rgba(251, 246, 190, 0.71);
+      }
+      100% {
+        transform: skewX(5deg);
+        box-shadow: 0 0 17px 10px rgba(251, 246, 190, 0.71);
+      }
+    }
+  .birthday-cake-html  .pyro > .before, .pyro > .after {
+      position: fixed;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff;
+      -moz-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+      -webkit-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+      -o-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+      -ms-animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+      animation: 1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+    }
+
+  .birthday-cake-html  .pyro > .after {
+      -moz-animation-delay: 1.25s, 1.25s, 1.25s;
+      -webkit-animation-delay: 1.25s, 1.25s, 1.25s;
+      -o-animation-delay: 1.25s, 1.25s, 1.25s;
+      -ms-animation-delay: 1.25s, 1.25s, 1.25s;
+      animation-delay: 1.25s, 1.25s, 1.25s;
+      -moz-animation-duration: 1.25s, 1.25s, 6.25s;
+      -webkit-animation-duration: 1.25s, 1.25s, 6.25s;
+      -o-animation-duration: 1.25s, 1.25s, 6.25s;
+      -ms-animation-duration: 1.25s, 1.25s, 6.25s;
+      animation-duration: 1.25s, 1.25s, 6.25s;
+    }
+
+    @-webkit-keyframes bang {
+      to {
+        box-shadow: -159px -247.6666666667px #ff8400, -10px -211.6666666667px #0066ff, -166px -15.6666666667px #0011ff, 27px -306.6666666667px #ff0062, -184px -156.6666666667px #002fff, 201px -181.6666666667px deepskyblue, 43px -94.6666666667px #00fbff, 225px -169.6666666667px #55ff00, 39px -371.6666666667px #ff007b, -175px -378.6666666667px #ff0048, -146px -187.6666666667px #1aff00, -238px -202.6666666667px #1e00ff, -29px -7.6666666667px #b3ff00, 70px -265.6666666667px #ff5500, 14px -67.6666666667px #d900ff, -58px 68.3333333333px #9900ff, -122px 79.3333333333px #ff0900, -124px -409.6666666667px #00eeff, -153px -194.6666666667px #ff004d, 75px -333.6666666667px #ff00cc, 58px -350.6666666667px #0d00ff, 81px -115.6666666667px #ffaa00, 123px -404.6666666667px #00ff1a, 98px -20.6666666667px #ff00fb, 231px 9.3333333333px #ff004d, 209px -136.6666666667px #fff200, 232px -249.6666666667px #ff3300, -178px -15.6666666667px #00ffe6, 80px -160.6666666667px #ff00b7, 209px -383.6666666667px #00fff2, 55px -47.6666666667px #2bff00, -130px -259.6666666667px #ff7b00, 154px -17.6666666667px #00ff3c, 13px 66.3333333333px #6200ff, -122px -113.6666666667px #ff002f, -25px 27.3333333333px #d9ff00, -2px -293.6666666667px #0091ff, -236px -234.6666666667px #a600ff, 61px -137.6666666667px #fff700, -135px -105.6666666667px #0088ff, 40px -117.6666666667px #2fff00, -197px -177.6666666667px #91ff00, 30px -31.6666666667px #ffb700, 86px -193.6666666667px #aeff00, -72px -45.6666666667px #00d9ff, 75px -106.6666666667px #ff0080, -2px -148.6666666667px #ffbf00, -45px 2.3333333333px #00ddff, -81px -7.6666666667px #ffc800, 48px -232.6666666667px #00ff11, -160px 47.3333333333px #e1ff00;
+      }
+    }
+    @-moz-keyframes bang {
+      to {
+        box-shadow: -159px -247.6666666667px #ff8400, -10px -211.6666666667px #0066ff, -166px -15.6666666667px #0011ff, 27px -306.6666666667px #ff0062, -184px -156.6666666667px #002fff, 201px -181.6666666667px deepskyblue, 43px -94.6666666667px #00fbff, 225px -169.6666666667px #55ff00, 39px -371.6666666667px #ff007b, -175px -378.6666666667px #ff0048, -146px -187.6666666667px #1aff00, -238px -202.6666666667px #1e00ff, -29px -7.6666666667px #b3ff00, 70px -265.6666666667px #ff5500, 14px -67.6666666667px #d900ff, -58px 68.3333333333px #9900ff, -122px 79.3333333333px #ff0900, -124px -409.6666666667px #00eeff, -153px -194.6666666667px #ff004d, 75px -333.6666666667px #ff00cc, 58px -350.6666666667px #0d00ff, 81px -115.6666666667px #ffaa00, 123px -404.6666666667px #00ff1a, 98px -20.6666666667px #ff00fb, 231px 9.3333333333px #ff004d, 209px -136.6666666667px #fff200, 232px -249.6666666667px #ff3300, -178px -15.6666666667px #00ffe6, 80px -160.6666666667px #ff00b7, 209px -383.6666666667px #00fff2, 55px -47.6666666667px #2bff00, -130px -259.6666666667px #ff7b00, 154px -17.6666666667px #00ff3c, 13px 66.3333333333px #6200ff, -122px -113.6666666667px #ff002f, -25px 27.3333333333px #d9ff00, -2px -293.6666666667px #0091ff, -236px -234.6666666667px #a600ff, 61px -137.6666666667px #fff700, -135px -105.6666666667px #0088ff, 40px -117.6666666667px #2fff00, -197px -177.6666666667px #91ff00, 30px -31.6666666667px #ffb700, 86px -193.6666666667px #aeff00, -72px -45.6666666667px #00d9ff, 75px -106.6666666667px #ff0080, -2px -148.6666666667px #ffbf00, -45px 2.3333333333px #00ddff, -81px -7.6666666667px #ffc800, 48px -232.6666666667px #00ff11, -160px 47.3333333333px #e1ff00;
+      }
+    }
+    @-o-keyframes bang {
+      to {
+        box-shadow: -159px -247.6666666667px #ff8400, -10px -211.6666666667px #0066ff, -166px -15.6666666667px #0011ff, 27px -306.6666666667px #ff0062, -184px -156.6666666667px #002fff, 201px -181.6666666667px deepskyblue, 43px -94.6666666667px #00fbff, 225px -169.6666666667px #55ff00, 39px -371.6666666667px #ff007b, -175px -378.6666666667px #ff0048, -146px -187.6666666667px #1aff00, -238px -202.6666666667px #1e00ff, -29px -7.6666666667px #b3ff00, 70px -265.6666666667px #ff5500, 14px -67.6666666667px #d900ff, -58px 68.3333333333px #9900ff, -122px 79.3333333333px #ff0900, -124px -409.6666666667px #00eeff, -153px -194.6666666667px #ff004d, 75px -333.6666666667px #ff00cc, 58px -350.6666666667px #0d00ff, 81px -115.6666666667px #ffaa00, 123px -404.6666666667px #00ff1a, 98px -20.6666666667px #ff00fb, 231px 9.3333333333px #ff004d, 209px -136.6666666667px #fff200, 232px -249.6666666667px #ff3300, -178px -15.6666666667px #00ffe6, 80px -160.6666666667px #ff00b7, 209px -383.6666666667px #00fff2, 55px -47.6666666667px #2bff00, -130px -259.6666666667px #ff7b00, 154px -17.6666666667px #00ff3c, 13px 66.3333333333px #6200ff, -122px -113.6666666667px #ff002f, -25px 27.3333333333px #d9ff00, -2px -293.6666666667px #0091ff, -236px -234.6666666667px #a600ff, 61px -137.6666666667px #fff700, -135px -105.6666666667px #0088ff, 40px -117.6666666667px #2fff00, -197px -177.6666666667px #91ff00, 30px -31.6666666667px #ffb700, 86px -193.6666666667px #aeff00, -72px -45.6666666667px #00d9ff, 75px -106.6666666667px #ff0080, -2px -148.6666666667px #ffbf00, -45px 2.3333333333px #00ddff, -81px -7.6666666667px #ffc800, 48px -232.6666666667px #00ff11, -160px 47.3333333333px #e1ff00;
+      }
+    }
+    @-ms-keyframes bang {
+      to {
+        box-shadow: -159px -247.6666666667px #ff8400, -10px -211.6666666667px #0066ff, -166px -15.6666666667px #0011ff, 27px -306.6666666667px #ff0062, -184px -156.6666666667px #002fff, 201px -181.6666666667px deepskyblue, 43px -94.6666666667px #00fbff, 225px -169.6666666667px #55ff00, 39px -371.6666666667px #ff007b, -175px -378.6666666667px #ff0048, -146px -187.6666666667px #1aff00, -238px -202.6666666667px #1e00ff, -29px -7.6666666667px #b3ff00, 70px -265.6666666667px #ff5500, 14px -67.6666666667px #d900ff, -58px 68.3333333333px #9900ff, -122px 79.3333333333px #ff0900, -124px -409.6666666667px #00eeff, -153px -194.6666666667px #ff004d, 75px -333.6666666667px #ff00cc, 58px -350.6666666667px #0d00ff, 81px -115.6666666667px #ffaa00, 123px -404.6666666667px #00ff1a, 98px -20.6666666667px #ff00fb, 231px 9.3333333333px #ff004d, 209px -136.6666666667px #fff200, 232px -249.6666666667px #ff3300, -178px -15.6666666667px #00ffe6, 80px -160.6666666667px #ff00b7, 209px -383.6666666667px #00fff2, 55px -47.6666666667px #2bff00, -130px -259.6666666667px #ff7b00, 154px -17.6666666667px #00ff3c, 13px 66.3333333333px #6200ff, -122px -113.6666666667px #ff002f, -25px 27.3333333333px #d9ff00, -2px -293.6666666667px #0091ff, -236px -234.6666666667px #a600ff, 61px -137.6666666667px #fff700, -135px -105.6666666667px #0088ff, 40px -117.6666666667px #2fff00, -197px -177.6666666667px #91ff00, 30px -31.6666666667px #ffb700, 86px -193.6666666667px #aeff00, -72px -45.6666666667px #00d9ff, 75px -106.6666666667px #ff0080, -2px -148.6666666667px #ffbf00, -45px 2.3333333333px #00ddff, -81px -7.6666666667px #ffc800, 48px -232.6666666667px #00ff11, -160px 47.3333333333px #e1ff00;
+      }
+    }
+    @keyframes bang {
+      to {
+        box-shadow: -159px -247.6666666667px #ff8400, -10px -211.6666666667px #0066ff, -166px -15.6666666667px #0011ff, 27px -306.6666666667px #ff0062, -184px -156.6666666667px #002fff, 201px -181.6666666667px deepskyblue, 43px -94.6666666667px #00fbff, 225px -169.6666666667px #55ff00, 39px -371.6666666667px #ff007b, -175px -378.6666666667px #ff0048, -146px -187.6666666667px #1aff00, -238px -202.6666666667px #1e00ff, -29px -7.6666666667px #b3ff00, 70px -265.6666666667px #ff5500, 14px -67.6666666667px #d900ff, -58px 68.3333333333px #9900ff, -122px 79.3333333333px #ff0900, -124px -409.6666666667px #00eeff, -153px -194.6666666667px #ff004d, 75px -333.6666666667px #ff00cc, 58px -350.6666666667px #0d00ff, 81px -115.6666666667px #ffaa00, 123px -404.6666666667px #00ff1a, 98px -20.6666666667px #ff00fb, 231px 9.3333333333px #ff004d, 209px -136.6666666667px #fff200, 232px -249.6666666667px #ff3300, -178px -15.6666666667px #00ffe6, 80px -160.6666666667px #ff00b7, 209px -383.6666666667px #00fff2, 55px -47.6666666667px #2bff00, -130px -259.6666666667px #ff7b00, 154px -17.6666666667px #00ff3c, 13px 66.3333333333px #6200ff, -122px -113.6666666667px #ff002f, -25px 27.3333333333px #d9ff00, -2px -293.6666666667px #0091ff, -236px -234.6666666667px #a600ff, 61px -137.6666666667px #fff700, -135px -105.6666666667px #0088ff, 40px -117.6666666667px #2fff00, -197px -177.6666666667px #91ff00, 30px -31.6666666667px #ffb700, 86px -193.6666666667px #aeff00, -72px -45.6666666667px #00d9ff, 75px -106.6666666667px #ff0080, -2px -148.6666666667px #ffbf00, -45px 2.3333333333px #00ddff, -81px -7.6666666667px #ffc800, 48px -232.6666666667px #00ff11, -160px 47.3333333333px #e1ff00;
+      }
+    }
+    @-webkit-keyframes gravity {
+      to {
+        transform: translateY(200px);
+        -moz-transform: translateY(200px);
+        -webkit-transform: translateY(200px);
+        -o-transform: translateY(200px);
+        -ms-transform: translateY(200px);
+        opacity: 0;
+      }
+    }
+    @-moz-keyframes gravity {
+      to {
+        transform: translateY(200px);
+        -moz-transform: translateY(200px);
+        -webkit-transform: translateY(200px);
+        -o-transform: translateY(200px);
+        -ms-transform: translateY(200px);
+        opacity: 0;
+      }
+    }
+    @-o-keyframes gravity {
+      to {
+        transform: translateY(200px);
+        -moz-transform: translateY(200px);
+        -webkit-transform: translateY(200px);
+        -o-transform: translateY(200px);
+        -ms-transform: translateY(200px);
+        opacity: 0;
+      }
+    }
+    @-ms-keyframes gravity {
+      to {
+        transform: translateY(200px);
+        -moz-transform: translateY(200px);
+        -webkit-transform: translateY(200px);
+        -o-transform: translateY(200px);
+        -ms-transform: translateY(200px);
+        opacity: 0;
+      }
+    }
+    @keyframes gravity {
+      to {
+        transform: translateY(200px);
+        -moz-transform: translateY(200px);
+        -webkit-transform: translateY(200px);
+        -o-transform: translateY(200px);
+        -ms-transform: translateY(200px);
+        opacity: 0;
+      }
+    }
+    @-webkit-keyframes position {
+      0%, 19.9% {
+        margin-top: 10%;
+        margin-left: 40%;
+      }
+      20%, 39.9% {
+        margin-top: 40%;
+        margin-left: 30%;
+      }
+      40%, 59.9% {
+        margin-top: 20%;
+        margin-left: 70%;
+      }
+      60%, 79.9% {
+        margin-top: 30%;
+        margin-left: 20%;
+      }
+      80%, 99.9% {
+        margin-top: 30%;
+        margin-left: 80%;
+      }
+    }
+    @-moz-keyframes position {
+      0%, 19.9% {
+        margin-top: 10%;
+        margin-left: 40%;
+      }
+      20%, 39.9% {
+        margin-top: 40%;
+        margin-left: 30%;
+      }
+      40%, 59.9% {
+        margin-top: 20%;
+        margin-left: 70%;
+      }
+      60%, 79.9% {
+        margin-top: 30%;
+        margin-left: 20%;
+      }
+      80%, 99.9% {
+        margin-top: 30%;
+        margin-left: 80%;
+      }
+    }
+    @-o-keyframes position {
+      0%, 19.9% {
+        margin-top: 10%;
+        margin-left: 40%;
+      }
+      20%, 39.9% {
+        margin-top: 40%;
+        margin-left: 30%;
+      }
+      40%, 59.9% {
+        margin-top: 20%;
+        margin-left: 70%;
+      }
+      60%, 79.9% {
+        margin-top: 30%;
+        margin-left: 20%;
+      }
+      80%, 99.9% {
+        margin-top: 30%;
+        margin-left: 80%;
+      }
+    }
+    @-ms-keyframes position {
+      0%, 19.9% {
+        margin-top: 10%;
+        margin-left: 40%;
+      }
+      20%, 39.9% {
+        margin-top: 40%;
+        margin-left: 30%;
+      }
+      40%, 59.9% {
+        margin-top: 20%;
+        margin-left: 70%;
+      }
+      60%, 79.9% {
+        margin-top: 30%;
+        margin-left: 20%;
+      }
+      80%, 99.9% {
+        margin-top: 30%;
+        margin-left: 80%;
+      }
+    }
+    @keyframes position {
+      0%, 19.9% {
+        margin-top: 10%;
+        margin-left: 40%;
+      }
+      20%, 39.9% {
+        margin-top: 40%;
+        margin-left: 30%;
+      }
+      40%, 59.9% {
+        margin-top: 20%;
+        margin-left: 70%;
+      }
+      60%, 79.9% {
+        margin-top: 30%;
+        margin-left: 20%;
+      }
+      80%, 99.9% {
+        margin-top: 30%;
+        margin-left: 80%;
+      }
+    }
+    .merrywrap.step-2 .birthday-cake-html{
+      top:0%;
+      opacity: 1;
+    }
+    .merrywrap.step-3 .birthday-cake-html{
+      top:0%;
+      opacity: 1;
+    }
+    .merrywrap.step-4 .birthday-cake-html{
+      top:0%;
+      opacity:1;
+    }
+    .next-btn{
+      display: inline-block;
+      padding:8px 30px;
+      color:#fff;
+      font-size: 20px;
+      border:2px solid #dd5152;
+      background-color: #dd5152;
+      position: absolute;
+      left:50%;
+      top:85%;
+      transform:translateX(-50%);
+      -webkit-transform:translateX(-50%);
+      -moz-transform:translateX(-50%);
+      -ms-transform:translateX(-50%);
+      -o-transform:translateX(-50%);
+      text-decoration: none;
+    }
+  </style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <div id="merrywrap" class="merrywrap">
+    <canvas id="snowfall"></canvas>
+    <div class="giftbox">
+      <div class="cover">
+        <div></div>
+      </div>
+      <div class="box"></div>
+    </div>
+    <div class="icons">
+      <div class="birthday-cake-html">
+      <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+        <bokeh></bokeh>
+      <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+      </div>
+      <h1>Feliz Cumpleaños Pratik!</h1>
+      <h2>Happy Birthday Bro!</h2>
+      <span>Name</span>
+      <div class="candle">
+         <div id="flame" class="lit"></div>
+      </div>
+
+      <div class="cake"></div>
+      <div class="plate"></div>
+
+
+      <a href="gallery.html" class="next-btn">Continue</a>
+      <!-- partial -->
+        </div>
+    </div>
+  </div>
+</body>
+<!-- partial -->
+  <script type="text/javascript">
+  window.onload=function(){
+    var merrywrap=document.getElementById("merrywrap");
+    var box=merrywrap.getElementsByClassName("giftbox")[0];
+    var step=1;
+    var stepMinutes=[2000,2000,1000,1000];
+    function init(){
+            box.addEventListener("click",openBox,false);
+    }
+    function stepClass(step){
+      merrywrap.className='merrywrap';
+      merrywrap.className='merrywrap step-'+step;
+    }
+    function openBox(){
+      if(step===1){
+        box.removeEventListener("click",openBox,false);
+      }
+      stepClass(step);
+      if(step===3){
+      }
+      if(step===4){
+         return;
+      }
+      setTimeout(openBox,stepMinutes[step-1]);
+      step++;
+    }
+
+    init();
+
+  }
+  </script>
+
+</body>
+</html>
